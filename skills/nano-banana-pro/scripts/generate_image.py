@@ -6,6 +6,7 @@
 #     "pillow>=10.0.0",
 # ]
 # ///
+# AI quality gate smoke test: no runtime behavior change.
 """
 Generate images using Google's Nano Banana Pro (Gemini 3 Pro Image) API.
 
