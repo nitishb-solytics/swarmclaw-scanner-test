@@ -89,13 +89,17 @@ jobs:
 
       - name: Run AI quality gate
         uses: nitishb-solytics/AI-STACK-MAPPER@main
+        env:
+          AI_STACK_LLM_API_KEY: ${{ secrets.AI_STACK_LLM_API_KEY }}
         with:
           path: "."
           mode: "review"
           changed-only: "true"
           base-ref: ${{ github.base_ref }}
           fail-on: "high"
-          llm-review: "false"
+          llm-review: "true"
+          llm-base-url: "https://openrouter.ai/api/v1"
+          llm-model: "google/gemma-4-26b-a4b-it:free"
           quality-output: "ai-quality-report.md"
           quality-json-output: "ai-quality-report.json"
 
