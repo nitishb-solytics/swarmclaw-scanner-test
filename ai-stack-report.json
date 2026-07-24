@@ -1,0 +1,91 @@
+{
+  "root": "/home/runner/work/swarmclaw-scanner-test/swarmclaw-scanner-test",
+  "generated_at": "2026-07-24T03:08:41.876421Z",
+  "scanned_files": 4,
+  "skipped_files": [],
+  "total_components": 3,
+  "categories": {
+    "LLM": [
+      {
+        "category": "LLM",
+        "name": "Google Gemini / Vertex AI",
+        "package": "google",
+        "confidence": "high",
+        "count": 2,
+        "deployment_targets": [
+          "cloud"
+        ],
+        "occurrences": [
+          {
+            "file": "skills/nano-banana-pro/scripts/generate_image.py",
+            "line": 122,
+            "match_type": "import",
+            "confidence": "high",
+            "detail": "google",
+            "deployment_target": "cloud",
+            "context_hint": "",
+            "prompt_hint": ""
+          },
+          {
+            "file": "skills/nano-banana-pro/scripts/generate_image.py",
+            "line": 123,
+            "match_type": "import",
+            "confidence": "high",
+            "detail": "google.genai",
+            "deployment_target": "cloud",
+            "context_hint": "",
+            "prompt_hint": ""
+          }
+        ]
+      },
+      {
+        "category": "LLM",
+        "name": "Generic LLM client (verify provider)",
+        "package": "",
+        "confidence": "medium",
+        "count": 1,
+        "deployment_targets": [
+          "cloud"
+        ],
+        "occurrences": [
+          {
+            "file": "skills/nano-banana-pro/scripts/generate_image.py",
+            "line": 127,
+            "match_type": "instantiation",
+            "confidence": "medium",
+            "detail": "",
+            "deployment_target": "cloud",
+            "context_hint": "function `main`",
+            "prompt_hint": ""
+          }
+        ]
+      },
+      {
+        "category": "LLM",
+        "name": "Google Gemini family (string literal)",
+        "package": "",
+        "confidence": "low",
+        "count": 1,
+        "deployment_targets": [
+          "cloud"
+        ],
+        "occurrences": [
+          {
+            "file": "skills/nano-banana-pro/scripts/generate_image.py",
+            "line": 181,
+            "match_type": "literal",
+            "confidence": "low",
+            "detail": "gemini-3-pro-image-preview",
+            "deployment_target": "cloud",
+            "context_hint": "function `main`",
+            "prompt_hint": ""
+          }
+        ]
+      }
+    ],
+    "MCP": [],
+    "TOOL": [],
+    "AGENT_FRAMEWORK": [],
+    "VECTOR_STORE": []
+  }
+}
