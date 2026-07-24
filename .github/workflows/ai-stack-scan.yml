@@ -1,0 +1,60 @@
+name: Update AI Stack Report
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "AI_STACK.md"
+      - "ai-stack-report.json"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout SwarmClaw
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run AI Stack Mapper
+        uses: nitishb-solytics/AI-STACK-MAPPER@main
+        with:
+          path: "."
+          markdown-output: "AI_STACK.md"
+          json-output: "ai-stack-report.json"
+          enrich: "false"
+
+      - name: Validate reports
+        shell: bash
+        run: |
+          test -s AI_STACK.md
+          test -s ai-stack-report.json
+          python -m json.tool ai-stack-report.json > /dev/null
+
+      - name: Commit updated reports
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add AI_STACK.md ai-stack-report.json
+
+          if git diff --cached --quiet; then
+            echo "No AI stack changes detected."
+            exit 0
+          fi
+
+          git commit -m "chore: update AI stack report"
+          git push
