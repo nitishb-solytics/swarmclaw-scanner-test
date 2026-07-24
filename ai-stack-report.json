@@ -1,6 +1,6 @@
 {
   "root": "/home/runner/work/swarmclaw-scanner-test/swarmclaw-scanner-test",
-  "generated_at": "2026-07-24T04:42:09.588260Z",
+  "generated_at": "2026-07-24T05:35:20.577923Z",
   "scanned_files": 4,
   "skipped_files": [],
   "total_components": 7,
@@ -21,7 +21,7 @@
         "occurrences": [
           {
             "file": "skills/nano-banana-pro/scripts/generate_image.py",
-            "line": 122,
+            "line": 123,
             "match_type": "import",
             "confidence": "high",
             "detail": "google",
@@ -31,7 +31,7 @@
           },
           {
             "file": "skills/nano-banana-pro/scripts/generate_image.py",
-            "line": 123,
+            "line": 124,
             "match_type": "import",
             "confidence": "high",
             "detail": "google.genai",
@@ -54,7 +54,7 @@
         "occurrences": [
           {
             "file": "skills/nano-banana-pro/scripts/generate_image.py",
-            "line": 181,
+            "line": 182,
             "match_type": "literal",
             "confidence": "low",
             "detail": "gemini-3-pro-image-preview",
@@ -79,7 +79,7 @@
         "occurrences": [
           {
             "file": "skills/nano-banana-pro/scripts/generate_image.py",
-            "line": 127,
+            "line": 128,
             "match_type": "instantiation",
             "confidence": "high",
             "detail": "",
